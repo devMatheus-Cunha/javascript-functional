@@ -38,19 +38,15 @@ const sum = (one) => {
     }
   }
 }
-
 function mult(one, two) {
   return one * two
 }
-
 function div(one, two) {
   return one / two
 }
-
 function sub(one, two) {
   return one - two
 }
-
 function calc(one) {
   return (two) => {
     return (fn) => {
@@ -58,7 +54,6 @@ function calc(one) {
     }
   }
 }
-
 console.log(sum(3)(4)(5))
 console.log(calc(10)(2)(mult))
 console.log(calc(10)(2)(div))
