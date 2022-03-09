@@ -30,7 +30,20 @@ function pow(base) {
 const powOfTwo = pow(2)
 console.log(powOfTwo(8))
 
-//? Task 
+//? 3) Arrow function 
+const totalSum = (...numbers) => {
+  let total = 0
+  for (let number of numbers) {
+    total += number
+  }
+  return total
+}
+const otherFormFunctionPow = base => exp => Math.pow(base, exp)
+
+console.log(totalSum(2, 4, 6, 8));
+console.log(totalSum(2, 4, 6, 8, 10));
+
+//! Task 
 const sum = (one) => {
   return (two) => {
     return (three) => {
@@ -38,15 +51,19 @@ const sum = (one) => {
     }
   }
 }
+
 function mult(one, two) {
   return one * two
 }
+
 function div(one, two) {
   return one / two
 }
+
 function sub(one, two) {
   return one - two
 }
+
 function calc(one) {
   return (two) => {
     return (fn) => {
