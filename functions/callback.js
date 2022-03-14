@@ -18,7 +18,7 @@ const cb = () => console.log("Exec1...")
 
 
 // 3) Exemple of the Callback
-const route = path.join(__dirname, "dados.txt")
+const route = path.join(__dirname, "_dados.txt")
 fs.readFile(route, (_, data) => {
   console.log(data.toString())
 })
