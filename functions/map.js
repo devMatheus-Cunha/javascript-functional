@@ -44,3 +44,17 @@ const calcQtdXPrice = () => {
 
 console.log(cart.map(getNamesCart))
 console.log(calcQtdXPrice())
+
+// 3) Manual Map 
+Array.prototype.myMap = function(fn) {
+  const mapped = []
+  for(let i = 0; i < this.length; i ++) {
+      const result = fn(this [i], i, this)
+      mapped.push(result)
+  }
+  return mapped
+}
+
+const getPrice = item => item.price
+console.log(cart.myMap(getPrice))
+
