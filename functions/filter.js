@@ -1,3 +1,4 @@
+// 1) Exemple one
 const cart = [{
     name: 'Caneta',
     qtd: 10,
@@ -27,7 +28,21 @@ const cart = [{
 
 const qtaGraterZero = item => item.qtd > 0
 // const productWithQtaGrateZero = cart.filter(qtaGraterZero).map(item => item.name)
-const productWithQtaGrateZero = cart.flatMap(item => item.qtd > 0 ? item.name : [] )
+const productWithQtaGrateZero = cart.flatMap(item => item.qtd > 0 ? item.name : [])
 
 console.log(productWithQtaGrateZero)
 console.log(cart.filter(qtaGraterZero))
+
+// 2) Exemple one
+Array.prototype.myFilter = function (fn) {
+  const newArr = []
+  for (let i = 0; i < this.length; i++) {
+    if (fn(this[i], i, this)) {
+      newArr.push(this[i])
+    }
+  }
+  return newArr
+}
+
+const getPrice = cart.myFilter(item => item.price < 20)
+console.log(getPrice);
