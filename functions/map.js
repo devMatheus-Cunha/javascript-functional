@@ -41,7 +41,6 @@ const getNamesCart = item => item.name
 const calcQtdXPrice = () => {
   return cart.map(item => item.qtd * item.price)
 }
-
 console.log(cart.map(getNamesCart))
 console.log(calcQtdXPrice())
 
