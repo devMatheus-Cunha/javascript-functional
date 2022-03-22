@@ -31,3 +31,19 @@ const sumValues = (acc, el) => acc + el
 const totalValues = cart.map(getTotal).reduce(sumValues, 0)
 
 console.log(totalValues)
+
+// Reduce manual 
+Array.prototype.myReduce = function (fn, inicial) {
+    let acc = inicial
+    for (let i = 0; i < this.length; i++) {
+      if (!acc && i === 0) {
+        acc = this[i]
+        continue
+      }
+      acc = fn(acc, this[i], i, this)
+    }
+    return acc
+  }
+
+const totalValuesTwo = cart.map(getTotal).myReduce(sumValues, 0)
+console.log(totalValuesTwo)
