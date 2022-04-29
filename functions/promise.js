@@ -25,16 +25,40 @@ function awaitPromise(time = 2000) {
 awaitPromise().then(() => awaitPromise(3000)).then(awaitPromise)
 
 // 3)
-function gerarNumerosEntre (min, max) {
+function generateNumbersBetween(min, max) {
   if (min > max) {
-       [max, min] = [min, max] 
- }
+    [max, min] = [min, max]
+  }
   return new Promise(resolve => {
-       const fator = max - min + 1
-       const aleatorio = parseInt (Math.random () * fator) + min
-       resolve(aleatorio)
- })
+    const factor = max - min + 1
+    const random = parseInt(Math.random() * factor) + min
+    resolve(random)
+  })
 }
-gerarNumerosEntre(1, 60)
+generateNumbersBetween(1, 60)
   .then(num => num * 10)
-  .then(numX10 => console.log(`O numero gerado foi ${numX10}`)) 
+  .then(numX10 => console.log(`O numero gerado foi ${numX10}`))
+
+// 4)
+function generateNumbers(min, max, tempo) {
+  if (min > max)[max, min] = [min, max]
+  return new Promise(resolve => {
+    setTimeout(function () {
+      const factor = max - min + 1
+      const random = parseInt(Math.random() * factor) + min
+      resolve(random)
+    }, tempo)
+  })
+}
+
+const generateMultipleNumbers = () => {
+  return Promise.all([
+    generateNumbers(1, 60, 4000),
+    generateNumbers(1, 60, 1000),
+    generateNumbers(1, 60, 500),
+    generateNumbers(1, 60, 3000),
+    generateNumbers(1, 60, 100),
+    generateNumbers(1, 60, 1500),
+  ])
+}
+generateMultipleNumbers().then(numbers => console.log(numbers))
