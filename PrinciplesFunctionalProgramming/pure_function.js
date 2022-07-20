@@ -18,4 +18,6 @@ console.log(areaCirc(10))
 function areaCircPure(raio, PI) {
   return raio * raio * PI
 }
-console.log(areaCircPure(10))
+console.log(areaCircPure(10, 3.14))
+console.log(areaCircPure(10, 3.141502))
+console.log(areaCircPure(10, Math.PI))
