@@ -18,9 +18,17 @@ function slowDown(text) {
  return text.split('').join(' ')
 }
 
-
-const result = composition(
+const exaggerated = composition(
  shout, emphasize, slowDown
-)('STOP')
+)
 
-console.log(result)
+const littleExaggerated = composition(
+ shout, emphasize
+)
+
+const resultOne = exaggerated('stop')
+const resultTwo = littleExaggerated('watch out for the hole')
+console.log({
+ resultOne,
+ resultTwo
+})
