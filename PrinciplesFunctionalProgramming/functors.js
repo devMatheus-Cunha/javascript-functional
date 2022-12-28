@@ -1,6 +1,6 @@
-// functors s'ao objetos que implementam a função MAP que também é um 'wrapper' de um valor 
+// functors are objects that implement the MAP function which is also a wrapper for a value 
 
-// Array e uum exemplo de FUNCTORS
+// Array is an example of FUNCTORS
 const nums = [1, 2, 3, 4, 5, 6]
 const newNums = nums.map(el => el + 10).map(el => el * 2)
 console.log(nums, newNums)
